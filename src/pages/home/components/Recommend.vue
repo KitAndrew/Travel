@@ -2,7 +2,7 @@
   <div>
     <div class="title">热门推荐</div>
     <ul>
-      <li class="item border-bottom" v-for="item of recommendList" :key="item.id">
+      <li class="item border-bottom" v-for="item of list" :key="item.id">
         <div class="item-img-wrapper">
           <img class="item-img" :src="item.imgUrl">
         </div>
@@ -18,29 +18,11 @@
 <script>
 export default {
   name: 'HomeRecommend',
+  props: {
+    list: Array
+  },
   data () {
-    return {
-      recommendList: [
-        {
-          id: '001',
-          imgUrl: 'http://img1.qunarzz.com/sight/p0/1511/ea/eaf1bdc38aed9e6690.img.jpg_200x200_3032bf56.jpg',
-          title: '银杏湖乐园',
-          desc: '游乐园与生态区结合，亲子游好去处。'
-        },
-        {
-          id: '002',
-          imgUrl: 'http://img1.qunarzz.com/sight/p0/1511/ea/eaf1bdc38aed9e6690.img.jpg_200x200_3032bf56.jpg',
-          title: '银杏湖乐园',
-          desc: '游乐园与生态区结合，亲子游好去处。'
-        },
-        {
-          id: '003',
-          imgUrl: 'http://img1.qunarzz.com/sight/p0/1511/ea/eaf1bdc38aed9e6690.img.jpg_200x200_3032bf56.jpg',
-          title: '银杏湖乐园',
-          desc: '游乐园与生态区结合，亲子游好去处。'
-        }
-      ]
-    }
+    return {}
   }
 }
 </script>
