@@ -9,15 +9,22 @@
     </div>
     <router-link to="/city">
       <div class="header-right">
-        {{this.$store.state.city}}
+        <!--{{this.$store.state.city}}-->
+        <!--使用mapState后可简写为-->
+        {{this.city}}
         <span class="iconfont arrow-icon">&#xe6aa;</span>
       </div>
     </router-link>
   </div>
 </template>
 <script>
+import { mapState } from 'vuex'
 export default {
-  name: 'HomeHeader'
+  name: 'HomeHeader',
+  computed: {
+    // 使用mapState还可以这样写
+    ...mapState(['city'])
+  }
 }
 </script>
 <!--scoped 样式只对当前样式有效-->
@@ -46,7 +53,8 @@ export default {
       color #ccc
       text-align left
     .header-right
-      width 1.24rem
+      min-width 1.04rem
+      padding 0 .1rem
       float right
       text-align center
       color: #fff
