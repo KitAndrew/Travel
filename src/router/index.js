@@ -1,8 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from '@/pages/home/Home'
-import City from '@/pages/city/City'
-import Detail from '@/pages/detail/Detail'
 
 Vue.use(Router)
 
@@ -11,17 +8,18 @@ export default new Router({
     {
       path: '/',
       name: 'Home',
-      component: Home
+      // 异步加载 也就是需要哪个组件加载哪个组件
+      component: () => import('@/pages/home/Home')
     },
     {
       path: '/city',
       name: 'City',
-      component: City
+      component: () => import('@/pages/city/City')
     },
     {
       path: '/detail/:id',
       name: 'Detail',
-      component: Detail
+      component: () => import('@/pages/detail/Detail')
     }
   ],
   // 切换页面时从最顶部开始显示
